@@ -8,16 +8,16 @@ type Props = {
 }
 
 const Container = styled.div`
-  display: flex
-  flex-direction: column
-  flex: 1
-  align-items: center
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
 `
 
 const Header = styled.h1.attrs({
   isbig: props => props.isbig ? '3em' : '2em'
 })`
-  font-size: ${props => props.isbig}
+  font-size: ${props => props.isbig};
 `
 
 const Page1 = (props: Props) => {
