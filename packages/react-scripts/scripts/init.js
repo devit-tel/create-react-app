@@ -308,7 +308,7 @@ function installDependency() {
 function installDevDependency() {
   return new Promise(function(resolve, reject) {
     exec(
-      'yarn add -D react-app-rewire-mobx react-app-rewired eslint prettier babel-eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react @storybook/react @storybook/addon-actions @storybook/addon-links @storybook/addons',
+      'yarn add -D customize-cra react-app-rewired eslint prettier babel-eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react @storybook/react @storybook/addon-actions @storybook/addon-links @storybook/addons',
       (err, stdout, stderr) => {
         if (err) {
           // node couldn't execute the command
