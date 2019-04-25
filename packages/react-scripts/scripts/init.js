@@ -361,9 +361,9 @@ async function renameFiles(packageName, appPath) {
     nginxFile,
   ] = await Promise.all([
     fs.readFile(path.join(appPath, '.gitlab-ci.yml')),
-    fs.readFile(path.join(appPath, 'deployment', 'values-production-th.yaml')),
-    fs.readFile(path.join(appPath, 'deployment', 'values-staging-th.yaml')),
-    fs.readFile(path.join(appPath, 'deployment', 'values-development-th.yaml')),
+    fs.readFile(path.join(appPath, 'deployment', 'values-production.yaml')),
+    fs.readFile(path.join(appPath, 'deployment', 'values-staging.yaml')),
+    fs.readFile(path.join(appPath, 'deployment', 'values-development.yaml')),
     fs.readFile(
       path.join(appPath, 'deployment', 'nginx', 'conf.d', 'site.conf')
     ),
@@ -374,15 +374,15 @@ async function renameFiles(packageName, appPath) {
       _.template(gitlabCiYml.toString())(defaultDeployment)
     ),
     fs.writeFile(
-      path.join(appPath, 'deployment', 'values-production-th.yaml'),
+      path.join(appPath, 'deployment', 'values-production.yaml'),
       _.template(productionThYaml.toString())(defaultDeployment)
     ),
     fs.writeFile(
-      path.join(appPath, 'deployment', 'values-staging-th.yaml'),
+      path.join(appPath, 'deployment', 'values-staging.yaml'),
       _.template(stagingThYaml.toString())(defaultDeployment)
     ),
     fs.writeFile(
-      path.join(appPath, 'deployment', 'values-production-th.yaml'),
+      path.join(appPath, 'deployment', 'values-development.yaml'),
       _.template(developmentThYaml.toString())(defaultDeployment)
     ),
     fs.writeFile(
